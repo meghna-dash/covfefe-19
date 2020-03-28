@@ -6,7 +6,7 @@ import csv
 
 
 api_key="AIzaSyDh59lQsa5D4Jb2M1Jrahf1HjtQDgl13kw"
-num_search=20
+num_sites=25
 
 
 def lambda_handler(event, context):
@@ -16,14 +16,14 @@ def lambda_handler(event, context):
 
     response={}
     
-    google_results=google(query,num=num_sites,stop=num_sites)   
+    google_results=list(google(query,num=num_sites,stop=num_sites))   
 
 
 
     response["toxicity"]=toxicity_analysis(query)
-    response["med_credibility"]=math.tanh(med_validity_check(google_results))
-    response["neg_credibility"]=math.tanh(neg_validity_check(google_results))
-    response["news_hotness"]=math.tanh(news_validity_check(google_results))  
+    response["medical_credibility"]=scale(med_validity_check(google_results))
+    response["negitive_credibility"]=scale(neg_validity_check(google_results))
+    response["news_hotness"]=scale(news_validity_check(google_results))  
     response["useful-pages"]=google_results[0:4]
 
 
@@ -36,6 +36,10 @@ def lambda_handler(event, context):
         'body': json.dumps(response)
     }
 
+def scale(x):
+    x=math.tanh(4*x)
+    
+    return x
 
 def listToString(s):  
     
@@ -64,35 +68,31 @@ def toxicity_analysis(query):
 
 
 def neg_validity_check(results):
-    credible_sources=0;
+    credible_sources=0
     for site in results:
-        for source in good_sources:
-            if source in site.lower():
-                credible_sources += 3 
-                break
-    
         for source in bad_sources:
             if source in site.lower():
-                credible_sources += -3
-
+                credible_sources += 1 
+                break
+    
     return credible_sources/num_sites
 
 def med_validity_check(results):
-    credible_sources=0;
+    credible_sources=0
     for site in results:
         for source in good_sources:
             if source in site.lower():
-                credible_sources += 3 
+                credible_sources += 1 
                 break
     
     return credible_sources/num_sites
  
 
 def news_validity_check(results):
-    credibile_sources=0
-    for site in results
+    credible_sources=0
+    for site in results:
         for source in news_sources.keys():
-            if source in site.lower()
+            if source in site.lower():
                 credible_sources+=news_sources[source]
 
     return credible_sources/(num_sites*3)
