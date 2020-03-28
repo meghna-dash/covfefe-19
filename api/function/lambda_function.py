@@ -6,6 +6,8 @@ import csv
 
 
 api_key="AIzaSyDh59lQsa5D4Jb2M1Jrahf1HjtQDgl13kw"
+num_search=20
+
 
 def lambda_handler(event, context):
     print("Event Passed to Handler: " + json.dumps(event))
@@ -13,12 +15,16 @@ def lambda_handler(event, context):
     query= event["query"]
 
     response={}
+    
+    google_results=google(query,num=num_sites,stop=num_sites)   
+
+
 
     response["toxicity"]=toxicity_analysis(query)
-    response["credibility"]=math.tanh(validity_check(query))
-    response["neg_credibility"=math.tanh(neg_validity_check(query))]
-    response["useful-pages"]=search(query)                           
-
+    response["med_credibility"]=math.tanh(med_validity_check(google_results))
+    response["neg_credibility"]=math.tanh(neg_validity_check(google_results))
+    response["news_hotness"]=math.tanh(news_validity_check(google_results))  
+    response["useful-pages"]=google_results[0:4]
 
 
 
@@ -43,9 +49,6 @@ def listToString(s):
     # return string   
     return str1  
         
-def search(query):
-    return [j for j in google(query , num=5, stop=5)] 
-
 def toxicity_analysis(query):
     url = ('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze' + '?key=' + api_key)
     data_dict = {
@@ -58,10 +61,11 @@ def toxicity_analysis(query):
     return response_dict["attributeScores"]["TOXICITY"]["summaryScore"]["value"]
 
 
-def validity_check(query):
-    num_sites=20
+
+
+def neg_validity_check(results):
     credible_sources=0;
-    for site in google(query,num=num_sites,stop=num_sites):
+    for site in results:
         for source in good_sources:
             if source in site.lower():
                 credible_sources += 3 
@@ -73,10 +77,9 @@ def validity_check(query):
 
     return credible_sources/num_sites
 
-def validity_check(query):
-    num_sites=20
+def med_validity_check(results):
     credible_sources=0;
-    for site in google(query,num=num_sites,stop=num_sites):
+    for site in results:
         for source in good_sources:
             if source in site.lower():
                 credible_sources += 3 
@@ -84,17 +87,16 @@ def validity_check(query):
     
     return credible_sources/num_sites
  
-def neg_validity_check(query):
-    num_sites=20
-    credible_sources=0;
-    for site in google(query,num=num_sites,stop=num_sites):
-        for source in bad_sources:
-            if source in site.lower():
-                credible_sources += 3 
-                break
+
+def news_validity_check(results):
+    credibile_sources=0
+    for site in results
+        for source in news_sources.keys():
+            if source in site.lower()
+                credible_sources+=news_sources[source]
+
+    return credible_sources/(num_sites*3)
     
-    return credible_sources/num_sites
- 
 
 
 
@@ -113,3 +115,5 @@ good_sources=[
 ]
 
 bad_sources=json.load(open('data/bad_sites.txt'))
+
+news_sources=json.load(open('data/news_urls.json'))
