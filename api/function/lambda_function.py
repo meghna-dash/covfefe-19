@@ -1,6 +1,9 @@
 from googlesearch import search as google 
 import requests
 import json
+import math
+import csv 
+
 
 api_key="AIzaSyDh59lQsa5D4Jb2M1Jrahf1HjtQDgl13kw"
 
@@ -12,9 +15,9 @@ def lambda_handler(event, context):
     response={}
 
     response["toxicity"]=toxicity_analysis(query)
+    response["credibility"]=math.tanh(validity_check(query))
     response["useful-pages"]=search(query)
-    response["credibility"]=validity_check(query)
-
+                           
 
 
 
@@ -61,14 +64,15 @@ def validity_check(query):
     for site in google(query,num=num_sites,stop=num_sites):
         for source in good_sources:
             if source in site.lower():
-                credible_sources += 1
+                credible_sources += 3 
                 break
+    
+        for source in bad_sources:
+            if source in site.lower()
+                credible_sources += -3
 
     return credible_sources/num_sites
                 
-
-
-
 good_sources=[
 'cdc.gov',
 'who.int',
@@ -78,5 +82,9 @@ good_sources=[
 'harvard.edu',
 'apha.org',
 'avma.org',
-'.gov'
+'.gov',
+'.edu',
+'hopkinsmedicine.org'
 ]
+
+bad_sources=json.load('data/badsites.txt')
