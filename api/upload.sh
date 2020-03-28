@@ -9,6 +9,6 @@ rm -r ./*
 cd ..
 mv lambda_function.py function/
 mv requirments.txt function/
-mv ../ function/data
+mv data function/data
 aws lambda update-function-code --function-name covid-fact-check --zip-file fileb://lambda.zip
 rm lambda.zip
