@@ -16,8 +16,8 @@ def lambda_handler(event, context):
 
     response["toxicity"]=toxicity_analysis(query)
     response["credibility"]=math.tanh(validity_check(query))
-    response["useful-pages"]=search(query)
-                           
+    response["neg_credibility"=math.tanh(neg_validity_check(query))]
+    response["useful-pages"]=search(query)                           
 
 
 
@@ -72,7 +72,32 @@ def validity_check(query):
                 credible_sources += -3
 
     return credible_sources/num_sites
-                
+
+def validity_check(query):
+    num_sites=20
+    credible_sources=0;
+    for site in google(query,num=num_sites,stop=num_sites):
+        for source in good_sources:
+            if source in site.lower():
+                credible_sources += 3 
+                break
+    
+    return credible_sources/num_sites
+ 
+def neg_validity_check(query):
+    num_sites=20
+    credible_sources=0;
+    for site in google(query,num=num_sites,stop=num_sites):
+        for source in bad_sources:
+            if source in site.lower():
+                credible_sources += 3 
+                break
+    
+    return credible_sources/num_sites
+ 
+
+
+
 good_sources=[
 'cdc.gov',
 'who.int',
