@@ -1,13 +1,18 @@
-from googlesearch import search 
+from googlesearch import search as google 
 import requests
 import json
 
 api_key="AIzaSyDh59lQsa5D4Jb2M1Jrahf1HjtQDgl13kw"
 
 def lambda_handler(event, context):
-    print print_function('Function Executing')
     print("Event Passed to Handler: " + json.dumps(event))
     
+    query= event["query"]
+
+    response={}
+
+    response["toxicity"]=toxicity_analysis(query)
+    response["useful-pages"]=search(query)
 
 
 
@@ -19,7 +24,7 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps(event)
+        'body': json.dumps(response)
     }
 
 
@@ -36,8 +41,7 @@ def listToString(s):
     return str1  
         
 def search(query):
-    for j in search(query , num=5, stop=5): 
-        print(j) 
+    return [j for j in google(query , num=5, stop=5)] 
 
 def toxicity_analysis(query):
     url = ('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze' + '?key=' + api_key)
@@ -48,6 +52,4 @@ def toxicity_analysis(query):
     }
     response = requests.post(url=url, data=json.dumps(data_dict))
     response_dict = json.loads(response.content)
-    print(f'Toxicity Level:{response_dict["attributeScores"]["TOXICITY"]["summaryScore"]["value"]}')
-
-main()
+    return response_dict["attributeScores"]["TOXICITY"]["summaryScore"]["value"]
