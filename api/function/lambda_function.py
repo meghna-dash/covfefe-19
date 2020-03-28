@@ -13,7 +13,7 @@ def lambda_handler(event, context):
 
     response["toxicity"]=toxicity_analysis(query)
     response["useful-pages"]=search(query)
-
+    response["credibility"]=validity_check(query)
 
 
 
@@ -53,3 +53,30 @@ def toxicity_analysis(query):
     response = requests.post(url=url, data=json.dumps(data_dict))
     response_dict = json.loads(response.content)
     return response_dict["attributeScores"]["TOXICITY"]["summaryScore"]["value"]
+
+
+def validity_check(query):
+    num_sites=20
+    credible_sources=0;
+    for site in google(query,num=num_sites,stop=num_sites):
+        for source in good_sources:
+            if source in site.lower():
+                credible_sources += 1
+                break
+
+    return credible_sources/num_sites
+                
+
+
+
+good_sources=[
+'cdc.gov',
+'who.int',
+'un.org',
+'nih.gov',
+'mckinsey.com',
+'harvard.edu',
+'apha.org',
+'avma.org',
+'.gov'
+]
