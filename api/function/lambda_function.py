@@ -87,4 +87,4 @@ good_sources=[
 'hopkinsmedicine.org'
 ]
 
-bad_sources=json.load(open('data/bad_sites.txt','r'))
+bad_sources=json.load(open('data/bad_sites.txt'))
