@@ -4,7 +4,7 @@ pip install -r requirments.txt -t .
 zip -r ../lambda.zip .
 mv lambda_function.py ../
 mv requirments.txt ../
-mv data ,,/
+mv data ../
 rm -r ./*
 cd ..
 mv lambda_function.py function/
