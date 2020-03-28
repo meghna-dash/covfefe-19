@@ -5,14 +5,24 @@ import json
 
 api_key="AIzaSyDh59lQsa5D4Jb2M1Jrahf1HjtQDgl13kw"
 
-def main():
+def lambda_handler(event, context):
+    print print_function('Function Executing')
+    print("Event Passed to Handler: " + json.dumps(event))
+    
 
-    q=sys.argv[1:]
 
-    query=listToString(q)
-    print(query)
-    toxicity_analysis(query)
-    Search(query)
+
+
+
+
+
+
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
+
 
 def listToString(s):  
     
@@ -26,7 +36,7 @@ def listToString(s):
     # return string   
     return str1  
         
-def Search(query):
+def search(query):
     for j in search(query , num=5, stop=5): 
         print(j) 
 
