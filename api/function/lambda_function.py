@@ -68,7 +68,7 @@ def validity_check(query):
                 break
     
         for source in bad_sources:
-            if source in site.lower()
+            if source in site.lower():
                 credible_sources += -3
 
     return credible_sources/num_sites
@@ -87,4 +87,4 @@ good_sources=[
 'hopkinsmedicine.org'
 ]
 
-bad_sources=json.load('data/badsites.txt')
+bad_sources=json.load(open('data/bad_sites.txt','r'))
