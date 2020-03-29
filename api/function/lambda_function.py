@@ -24,7 +24,7 @@ def lambda_handler(event, context):
     response["medical_credibility"]=scale(med_validity_check(google_results))
     response["negitive_credibility"]=scale(neg_validity_check(google_results))
     response["news_hotness"]=scale(news_validity_check(google_results))  
-    response["useful-pages"]=google_results[0:4]
+    response["useful_pages"]=google_results[0:4]
 
 
 
