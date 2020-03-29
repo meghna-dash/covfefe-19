@@ -1,0 +1,10 @@
+numpy
+scipy
+scikit-learn
+torch
+tqdm
+transformers
+nltk
+Flask
+Google-Search-API
+sentence-transformers
