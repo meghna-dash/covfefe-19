@@ -1,4 +1,4 @@
-from googlesearch import search as google 
+from google import google
 import requests
 import json
 import math
@@ -10,31 +10,24 @@ num_sites=25
 
 
 def lambda_handler(event, context):
-    print("Event Passed to Handler: " + json.dumps(event))
     
     query= event["query"]
 
-    response={}
+    search_result=google.search(query,3)
+    response=[ google_to_dict(google) for google in search_result[0:25]]
     
-    google_results=list(google(query,num=num_sites,stop=num_sites))   
-
-
-
-    response["toxicity"]=toxicity_analysis(query)
-    response["medical_credibility"]=scale(med_validity_check(google_results))
-    response["negitive_credibility"]=scale(neg_validity_check(google_results))
-    response["news_hotness"]=scale(news_validity_check(google_results))  
-    response["useful_pages"]=google_results[0:4]
-
-
-
-
-
-
     return {
         'statusCode': 200,
         'body': json.dumps(response)
     }
+
+def google_to_dict(obj):
+    properies=[a for a in dir(obj) if not a.startswith('__') and not callable(getattr(obj, a))]
+    return {key : getattr(obj,key) for key in properies}
+
+
+
+
 
 def scale(x):
     x=math.tanh(4*x)
