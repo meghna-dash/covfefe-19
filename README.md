@@ -7,27 +7,35 @@
 You need Node.js installed
 
 https://nodejs.org/en/
+
 ---
 ## Installation
 
-- Clone the Directory
+Clone the Directory
+
 '''bash
 git clone https://github.com/arjungandhi/covfefe-19.git
 '''
-- cd into the frontend folder
+cd into the frontend folder
+
 '''bash
 cd covfefe-19
 cd frontend
 '''
-- Build
+Build
+
 '''bash
 npm install
 npm build
 '''
-- Go to chrome://extensions/
-- Turn on Developer Mode
-- Click Load Unpacked and select the build folder
-- Use and Enjoy!
+Go to chrome://extensions/
+
+Turn on Developer Mode
+
+Click Load Unpacked and select the build folder
+
+Use and Enjoy!
+
 
 ---
 ## Team
