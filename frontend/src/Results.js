@@ -115,9 +115,9 @@ class Results extends Component {
           </table>
         </div>
         <br/> <br/>
-        <h3>
+        <h2>
           Relevant Articles
-        </h3>
+        </h2>
         {this.state.response.useful_pages ? this.state.response.useful_pages.map((page, idx) => (
           <LinkCard
             title={page.title}

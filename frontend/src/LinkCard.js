@@ -35,6 +35,9 @@ class LinkCard extends Component {
         >
           <CardBody>
             <CardText>
+              <h2>
+                {psl.get(this.extractHostname(this.props.link))}
+              </h2>
               <h3>
                 {this.props.title}
                 {' '}
