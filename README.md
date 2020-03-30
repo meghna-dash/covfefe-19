@@ -11,16 +11,16 @@ https://nodejs.org/en/
 ## Installation
 
 - Clone the Directory
-''' bash
+'''bash
 git clone https://github.com/arjungandhi/covfefe-19.git
 '''
 - cd into the frontend folder
-''' bash
+'''bash
 cd covfefe-19
 cd frontend
 '''
 - Build
-''' bash
+'''bash
 npm install
 npm build
 '''
