@@ -8,8 +8,8 @@ You need Node.js installed
 
 https://nodejs.org/en/
 ---
+## Installation
 
-##Installation
 - Clone the Directory
 ''' bash
 git clone https://github.com/arjungandhi/covfefe-19.git
