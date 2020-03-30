@@ -1,0 +1,205 @@
+/* VARIABLES */
+
+$progress-width: 100%;
+$progress-height: .15em;
+
+$line-height: 1.5em;
+
+/* COLORS */
+
+$color: #6c6c6c;
+$color-bg: #f5f7f9;
+$color-progress-bg: #e5e9eb;
+
+$color-green: #4cd964;
+$color-turquoise: #5ac8fa;
+$color-blue: #007aff;
+$color-light-blue: #34aadc;
+$color-purple: #5856d6;
+$color-red: #ff2d55;
+
+/* BASE */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color;
+  margin: 0;
+  position: relative;
+}
+
+/* HELPERS */
+
+.text-center {
+  text-align: center;
+}
+
+/* GRID */
+
+.container {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* TOP PROGRESS */
+
+.topProgress {
+  background-color: $color-progress-bg;
+  height: $progress-height;
+  position: relative;
+  width: $progress-width;
+
+  &-bar {
+    animation-duration: 8s;
+    animation-name: width;
+    background-image: linear-gradient(to left, $color-green, $color-turquoise, $color-blue, $color-light-blue, $color-purple, $color-red);
+    background-size: $progress-width $progress-height;
+    height: 100%;
+    position: relative;
+  }
+}
+
+/* PROGRESS */
+
+.progress {
+  background-color: $color-progress-bg;
+  height: $progress-height * 8;
+  position: relative;
+  width: $progress-width;
+  min-width: 300px;
+
+  &-bar {
+    animation-duration: 3s;
+    animation-name: progress;
+    background-image: linear-gradient(to left, $color-green, $color-turquoise, $color-blue, $color-light-blue, $color-purple, $color-red);
+    background-size: $progress-width $progress-height;
+    height: 100%;
+    position: relative;
+  }
+}
+
+/* SIMILARITY */
+
+.similarity {
+  background-color: $color-progress-bg;
+  height: $progress-height;
+  position: relative;
+  width: $progress-width;
+
+  &-bar {
+    animation-duration: 3s;
+    animation-name: width;
+    background-image: linear-gradient(to left, $color-green, $color-turquoise, $color-blue, $color-light-blue, $color-purple, $color-red);
+    background-size: $progress-width $progress-height;
+    height: 100%;
+    position: relative;
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes width {
+
+  0%, 100% {
+    transition-timing-function: cubic-bezier(1, 0, .65, .85);
+  }
+
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+
+}
+
+@keyframes progress {
+
+  0%, 100% {
+    transition-timing-function: cubic-bezier(1, 0, .65, .85);
+  }
+
+  0% {
+    width: 0;
+  }
+
+}
+
+.msc-badge {
+  display: inline-block;
+  font-size: 12px;
+  background: gray;
+  color: #fff;
+  border-radius: 15px;
+  padding: 2px 10px;
+  &__success {
+    background: #2d8f90;
+    color: #fff;
+  }
+  &__alone {
+    background: transparent;
+  }
+}
+
+.msc-badge-alone {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 10px;
+  position: relative;
+  padding-left: 15px;
+  &:before {
+    display: block;
+    content: "";
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background: gray;
+    color: #fff;
+    left: 0;
+    top: 50%;
+    margin-top: -4px;
+  }
+  &__success {
+    color: #2d8f90;
+    &:before {
+      background: #2d8f90;
+    }
+  }
+}
+
+@-webkit-keyframes antStatusProcessing {
+  0% {
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    opacity: .5
+  }
+
+  100% {
+    -webkit-transform: scale(2.4);
+    transform: scale(2.4);
+    opacity: 0
+  }
+
+}
+
+@keyframes antStatusProcessing {
+  0% {
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    opacity: .5
+  }
+
+  100% {
+    -webkit-transform: scale(2.4);
+    transform: scale(2.4);
+    opacity: 0
+  }
+}

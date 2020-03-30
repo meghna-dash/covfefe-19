@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Covfefe-19",
+  "author": "Meghna Dash",
+  "version": "3",
+  "description": "Fighting misinformation about the Coronavirus.",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "small.png",
+    "48": "medium.png",
+    "128": "large.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"]
+  }],
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+}
