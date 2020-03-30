@@ -6,7 +6,7 @@
 ## Requirements
 You need Node.js installed
 
-<a href="https://nodejs.org/en/" target="_blank">Download</a>
+https://nodejs.org/en/
 ---
 
 ##Installation
