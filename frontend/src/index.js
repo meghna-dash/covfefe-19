@@ -5,13 +5,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  alert("Message received: ", request);
-  chrome.tabs.executeScript({
-    code: 'document.body.style.backgroundColor="orange"'
-  });
-})
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

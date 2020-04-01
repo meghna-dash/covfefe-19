@@ -48,7 +48,7 @@
 .link-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  background-color: #d5e9e9;
+  background-color: white;
   border-radius: 5px;
   cursor: pointer;
   padding: 12px;
