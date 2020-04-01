@@ -1,11 +1,11 @@
 import requests
 import json
 import math
-import csv 
+import csv
 from lxml.html import fromstring
 from itertools import cycle
 import traceback
-from .utils import search
+from utils import search
 
 
 
@@ -14,7 +14,7 @@ num_sites=25
 
 
 def lambda_handler(event, context):
-    
+
     query= event["query"]
 
     proxies = get_proxies()
@@ -30,8 +30,8 @@ def lambda_handler(event, context):
             search_result=search(query,3, proxies=proxies)
             break
         except:
-            #Most free proxies will often get connection errors. You will have retry the entire request using another proxy to work. 
-            #We will just skip retries as its beyond the scope of this tutorial and we are only downloading a single url 
+            #Most free proxies will often get connection errors. You will have retry the entire request using another proxy to work.
+            #We will just skip retries as its beyond the scope of this tutorial and we are only downloading a single url
             print("Skipping. Connnection error")
 
 
