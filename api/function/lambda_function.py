@@ -1,4 +1,4 @@
-from .utils.search import seach
+from .utils.search import search
 import requests
 import json
 import math
