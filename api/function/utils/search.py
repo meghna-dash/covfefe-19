@@ -67,7 +67,7 @@ def search(query, pages=1, lang='en', area='com', ncr=False, void=True, time_per
     results = []
     for i in range(first_page, first_page + pages):
         url = _get_search_url(query, i, lang=lang, area=area, ncr=ncr, time_period=time_period, sort_by_date=sort_by_date)
-        html = get_html(url,proxies)
+        html = get_html(url , proxies)
 
         if html:
             soup = BeautifulSoup(html, "html.parser")

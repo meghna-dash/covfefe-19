@@ -431,7 +431,7 @@ def _get_search_url(query, page=0, per_page=10, lang='en', area='com', ncr=False
 def get_html(url, proxies):
     ua = UserAgent()
     headers = {'User-Agent': ua.random}
-    response = request.get(url,proxies=proxies,headers=headers)
+    response = requests.get(url,proxies=proxies,headers=headers)
     html = response.content
     return html
 

@@ -6,7 +6,7 @@ from lxml.html import fromstring
 from itertools import cycle
 import traceback
 from utils import search
-
+import random
 
 
 api_key="AIzaSyDh59lQsa5D4Jb2M1Jrahf1HjtQDgl13kw"
@@ -18,24 +18,20 @@ def lambda_handler(event, context):
     query= event["query"]
 
     proxies = get_proxies()
-    proxy_pool = cycle(proxies)
+    
+    
 
-
-    for i in range(1,11):
-        #Get a proxy from the pool
-        proxy = next(proxy_pool)
-        print("Request #%d"%i)
+    for proxy in proxies:
         try:
-            proxies={"http": proxy, "https": proxy}
-            search_result=search(query,3, proxies=proxies)
+            p={"http": proxy, "https": proxy}
+            search_result=search(query,3, proxies=p)
             break
-        except:
-            #Most free proxies will often get connection errors. You will have retry the entire request using another proxy to work.
-            #We will just skip retries as its beyond the scope of this tutorial and we are only downloading a single url
-            print("Skipping. Connnection error")
+        except Exception as e:
+            print(e)
+            print("Failed Connection trying next")
 
 
-        response=[ google_to_dict(google) for google in search_result[0:25]]
+    response=[ google_to_dict(google) for google in search_result[0:25]]
 
 
 
@@ -50,12 +46,7 @@ def google_to_dict(obj):
     return {key : getattr(obj,key) for key in properies}
 
 def get_proxies():
-    url = 'https://free-proxy-list.net/'
+    url ='https://www.proxy-list.download/api/v1/get?type=https'
     response = requests.get(url)
-    parser = fromstring(response.text)
-    proxies = set()
-    for i in parser.xpath('//tbody/tr')[:10]:
-        if i.xpath('.//td[7][contains(text(),"yes")]'):
-            proxy = ":".join([i.xpath('.//td[1]/text()')[0], i.xpath('.//td[2]/text()')[0]])
-            proxies.add(proxy)
-    return proxies
+    urls=response.text.split()
+    return urls 
