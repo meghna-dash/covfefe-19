@@ -1,4 +1,3 @@
-from .utils.search import search
 import requests
 import json
 import math
@@ -6,6 +5,7 @@ import csv
 from lxml.html import fromstring
 from itertools import cycle
 import traceback
+from .utils import search
 
 
 
