@@ -13,4 +13,4 @@ mv requirments.txt function/
 mv data function/data
 mv utils function/utils
 aws lambda update-function-code --function-name covid-fact-check --zip-file fileb://lambda.zip
-rm lambda.zip
+#rm lambda.zip
