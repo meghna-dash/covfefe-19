@@ -1,6 +1,8 @@
 # Covfefe-19
+Covfefe-19 is an API packaged into a browser extension which helps people validate the information they see online about COVID-19. It takes in statements about the coronavirus from users' browsers and returns relevant sources including how similar each source's information is to the statement - along with our own summary statistics (credibility, toxicity, etc.). In the browser extension, users can see all of this data to keep them informed in the face of so much misleading information.
 
-> Covfefe-19 is an API packaged into a browser extension which helps people validate the information they see online about COVID-19. It takes in statements about the coronavirus from users' browsers and returns relevant sources including how similar each source's information is to the statement - along with our own summary statistics (credibility, toxicity, etc.). In the browser extension, users can see all of this data to keep them informed in the face of so much misleading information.
+<video src="https://youtu.be/uI1nMmEz5Mo" width="320" height="200" controls preload></video>
+
 
 ---
 ## Requirements
