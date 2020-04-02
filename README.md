@@ -9,6 +9,9 @@ You need to have Node.js installed.
 https://nodejs.org/en/
 
 ---
+## Get Started — Video
+
+---
 ## Installation
 
 - Clone the Directory
