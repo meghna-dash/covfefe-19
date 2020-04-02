@@ -4,9 +4,14 @@
 
 ---
 ## Requirements
-You need Node.js installed
+You need to have Node.js installed.
 
 https://nodejs.org/en/
+
+---
+## Get Started — Video
+
+https://youtu.be/jmkq0PEcGzA
 
 ---
 ## Installation
@@ -26,16 +31,21 @@ cd frontend
 
 ```bash
 npm install
-npm build
+npm run build
 ```
 - Go to chrome://extensions/
 
 - Turn on Developer Mode
 
-- Click Load Unpacked and select the build folder
+- Click 'Load Unpacked' and select the build folder
 
-- Use and Enjoy!
+---
+## Usage
+- Highlight any text that you want to fact-check with your cursor.
 
+- Click on the Covfefe-19 extension icon.
+
+- The extension will check the content against our API and show you the results.
 
 ---
 ## Team

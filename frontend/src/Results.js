@@ -34,7 +34,7 @@ class Results extends Component {
       "query": text
     } ;
 
-    const url = "http://ec2-54-236-4-7.compute-1.amazonaws.com:5000/";
+    const url = "http://ec2-107-22-26-250.compute-1.amazonaws.com:5000/";
 
     if (this.state.selection) {
       fetch(url,
