@@ -1,60 +1,43 @@
 ---
-youtubeId: uI1nMmEz5Mo
+demoVideoId: uI1nMmEz5Mo
+getStartedVideoId: uI1nMmEz5Mo
 ---
 
 # Covfefe-19
 Covfefe-19 is an API packaged into a browser extension which helps people validate the information they see online about COVID-19. It takes in statements about the coronavirus from users' browsers and returns relevant sources including how similar each source's information is to the statement - along with our own summary statistics (credibility, toxicity, etc.). In the browser extension, users can see all of this data to keep them informed in the face of so much misleading information.
 
-{% include youtubePlayer.html id=page.youtubeId %}
+{% include youtubePlayer.html id=page.demoVideoId %}
 
 ---
 ## Requirements
 You need to have Node.js installed.
-
 https://nodejs.org/en/
 
 ---
 ## Get Started — Video
-
-https://youtu.be/jmkq0PEcGzA
+{% include youtubePlayer.html id=page.getStartedVideoId %}
 
 ---
 ## Installation
 
+1. Download the browser extension.
 {% raw %}
 <button onclick="window.open('/build.zip')">Download</button>
 {% endraw %}
 
-- Clone the Directory
+2. Go to chrome://extensions/
 
-```bash
-git clone https://github.com/arjungandhi/covfefe-19.git
-```
-- cd into the frontend folder
+3. In the top right corner, make sure that Developer Mode is toggled on.
 
-```bash
-cd covfefe-19
-cd frontend
-```
-- Build
-
-```bash
-npm install
-npm run build
-```
-- Go to chrome://extensions/
-
-- Turn on Developer Mode
-
-- Click 'Load Unpacked' and select the build folder
+4. Click 'Load Unpacked' in the top right corner and select the build folder.
 
 ---
 ## Usage
-- Highlight any text that you want to fact-check with your cursor.
+1. Highlight any text that you want to fact-check with your cursor.
 
-- Click on the Covfefe-19 extension icon.
+2. Click on the Covfefe-19 extension icon.
 
-- The extension will check the content against our API and show you the results.
+3. The extension will check the content against our API and show you the results.
 
 ---
 ## Team
