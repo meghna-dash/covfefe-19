@@ -20,24 +20,24 @@ https://nodejs.org/en/
 ---
 ## Installation
 
-- Download
+1. Download the browser extension.
 {% raw %}
 <button onclick="window.open('/build.zip')">Download</button>
 {% endraw %}
 
-- Go to chrome://extensions/
+2. Go to chrome://extensions/
 
-- In the top right corner, make sure that Developer Mode is toggled on.
+3. In the top right corner, make sure that Developer Mode is toggled on.
 
-- Click 'Load Unpacked' in the top right corner and select the build folder.
+4. Click 'Load Unpacked' in the top right corner and select the build folder.
 
 ---
 ## Usage
-- Highlight any text that you want to fact-check with your cursor.
+1. Highlight any text that you want to fact-check with your cursor.
 
-- Click on the Covfefe-19 extension icon.
+2. Click on the Covfefe-19 extension icon.
 
-- The extension will check the content against our API and show you the results.
+3. The extension will check the content against our API and show you the results.
 
 ---
 ## Team
