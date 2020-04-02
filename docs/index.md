@@ -1,6 +1,6 @@
 ---
 demoVideoId: uI1nMmEz5Mo
-getStartedVideoId: uI1nMmEz5Mo
+getStartedVideoId: jmkq0PEcGzA
 ---
 
 # Covfefe-19
