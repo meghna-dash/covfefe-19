@@ -11,6 +11,8 @@ https://nodejs.org/en/
 ---
 ## Get Started — Video
 
+https://youtu.be/jmkq0PEcGzA
+
 ---
 ## Installation
 
