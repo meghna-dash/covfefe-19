@@ -1,19 +1,3 @@
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-
 # Covfefe-19
 
 > Covfefe-19 is an API packaged into a browser extension which helps people validate the information they see online about COVID-19. It takes in statements about the coronavirus from users' browsers and returns relevant sources including how similar each source's information is to the statement - along with our own summary statistics (credibility, toxicity, etc.). In the browser extension, users can see all of this data to keep them informed in the face of so much misleading information.
