@@ -14,15 +14,12 @@ You need to have Node.js installed.
 https://nodejs.org/en/
 
 ---
-## Get Started — Video
-{% include youtubePlayer.html id=page.getStartedVideoId %}
-
----
 ## Installation
+{% include youtubePlayer.html id=page.getStartedVideoId %}
 
 1. Download the browser extension.
 {% raw %}
-<button onclick="window.open('/build.zip')">Download</button>
+<button onclick="window.open('https://covid.arjungandhi.com/build.zip')">Download</button>
 {% endraw %}
 
 2. Go to chrome://extensions/
@@ -45,7 +42,9 @@ https://nodejs.org/en/
 | <a href="https://www.arjungandhi.com" target="_blank">**Arjun Gandhi**</a> | <a href="https://meghnadash.design" target="_blank">**Meghna Dash**</a> | <a href="https://github.com/sidharth-potdar" target="_blank">**Sidharth Potdar**</a> |
 | :---: |:---:| :---:|
 | [![Arjun Gandhi](https://avatars1.githubusercontent.com/u/33171158?v=3&s=200)](http://www.arjungandhi.com)    | [![Meghna Dash](https://avatars1.githubusercontent.com/u/44626500?v=3&s=200)](http://meghnadash.desigh) | [![Sidharth Potdar](https://avatars1.githubusercontent.com/u/32080078?v=3&s=200)](https://github.com/sidharth-potdar)  |
+| Arjun worked on building the initial prototype and deployed it to AWS. | Meghna created a browser extension that enables users to query our API to verify information online. | Sidharth worked on the API and cloud architecture, and helped out with the browser extension as well.|
 | <a href="https://www.arjungandhi.com" target="_blank">`Website`</a> | <a href="https://meghnadash.design" target="_blank">`Website`</a> | <a href="https://github.com/sidharth-potdar" target="_blank">`GitHub`</a> |
+
 
 ---
 
