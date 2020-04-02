@@ -21,6 +21,10 @@ https://youtu.be/jmkq0PEcGzA
 ---
 ## Installation
 
+{% raw %}
+<button onclick="window.open('/build.zip')">Download</button>
+{% endraw %}
+
 - Clone the Directory
 
 ```bash
@@ -59,6 +63,12 @@ npm run build
 | :---: |:---:| :---:|
 | [![Arjun Gandhi](https://avatars1.githubusercontent.com/u/33171158?v=3&s=200)](http://www.arjungandhi.com)    | [![Meghna Dash](https://avatars1.githubusercontent.com/u/44626500?v=3&s=200)](http://meghnadash.desigh) | [![Sidharth Potdar](https://avatars1.githubusercontent.com/u/32080078?v=3&s=200)](https://github.com/sidharth-potdar)  |
 | <a href="https://www.arjungandhi.com" target="_blank">`Website`</a> | <a href="https://meghnadash.design" target="_blank">`Website`</a> | <a href="https://github.com/sidharth-potdar" target="_blank">`GitHub`</a> |
+
+---
+
+## Next for Covfefe-19
+The next step would be to get our tool in as many hands as possible and get feedback. We want feedback on performance, usefulness, user experiences, everything. We specifically think we can improve some of the statistics and information we provide, but we definitely want to get as much data as possible.
+
 
 ---
 
