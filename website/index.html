@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="https://www.arjungandhi.com/css/default.css">
+  <link rel="stylesheet" href="https://www.arjungandhi.com/css/index.css">
+  <meta charset="utf-8">
+
+  <title>Covfefe-19</title>
+  <meta name="description" content="He does things .... Sometines.">
+  <meta name="author" content="Some Idiot.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type='text/javascript' src="./script.js"></script>
+
+</head>
+
+<body>
+
+  <div class="bg" id="content">
+    <div class="caption">
+      <p><span class="ui huge text">Covfefe-19</span></p>
+      <p><span class="ui big text">A quick service to fact check information you see about covid-19.</span></p>
+
+      <form id="covidsearch" class="ui big form ">
+        <div  class="ui action input">
+          <input id="query" type="text" size="50" placeholder="Social Distancing is helpful...">
+          <input type="submit" style="display: none;" />
+          <button id="loading" class="ui icon button">
+            <i class="search icon"></i>
+          </button>
+        </div>
+      </form>
+
+      <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Profile Picture
+        </div>
+        <div class="image content">
+          <div class="ui medium image">
+            <img src="/images/avatar/large/chris.jpg">
+          </div>
+          <div class="description">
+            <div class="ui header">We've auto-chosen a profile image for you.</div>
+            <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+            <p>Is it okay to use this photo?</p>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Nope
+          </div>
+          <div class="ui positive right labeled icon button">
+            Yep, that's me
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

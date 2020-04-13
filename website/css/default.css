@@ -1,0 +1,15 @@
+html {
+  --color-1: #2A3439;
+  --color-2: #0C6291;
+  --color-3: #893E3E;
+  --color-4: #DADDD8;
+  --color-5: #E7E9E6;
+  font-family: "Roboto";
+  font-weight: 400;
+  height: 100%;
+}
+
+body {
+  background-color:var(--color-5);
+  height: 100%;
+}
