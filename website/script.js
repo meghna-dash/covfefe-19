@@ -7,22 +7,24 @@ async function searchFunction(e) {
   e.preventDefault();
   //get input value
   var inputVal = document.getElementById("query").value
+  //show button is loading
   var form = document.getElementById("loading")
-  form.classList.add("loading");
-
-
-
-  data= await postData('https://covid-api.arjungandhi.com/', { query: inputVal })
+  form.classList.add("loading")
+  //make api requst
+  var res= await postData('https://covid-api.arjungandhi.com/', { query: inputVal })
+  data=JSON.parse(res.body)
   console.log(data)
-
-
-
-  $('.ui.modal')
+  //putting data in modal
+  
+  //
+  //pop modal up
+  $('.ui.tiny.modal')
     .modal('show')
   ;
-
-  form.classList.remove("loading");
+  //remove loading state
+  form.classList.remove("loading")
 }
+
 
 function load() {
 const form = document.getElementById('covidsearch');

@@ -27,7 +27,7 @@
       <p><span class="ui big text">A quick service to fact check information you see about covid-19.</span></p>
 
       <form id="covidsearch" class="ui big form ">
-        <div  class="ui action input">
+        <div class="ui action input">
           <input id="query" type="text" size="50" placeholder="Social Distancing is helpful...">
           <input type="submit" style="display: none;" />
           <button id="loading" class="ui icon button">
@@ -36,30 +36,17 @@
         </div>
       </form>
 
-      <div class="ui modal">
+      <div class="ui tiny modal">
         <i class="close icon"></i>
         <div class="header">
-          Profile Picture
+          What We Found
         </div>
-        <div class="image content">
-          <div class="ui medium image">
-            <img src="/images/avatar/large/chris.jpg">
-          </div>
-          <div class="description">
-            <div class="ui header">We've auto-chosen a profile image for you.</div>
-            <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-            <p>Is it okay to use this photo?</p>
+        <div class="content">
+          <div id="related_links" class="scrolling content">
           </div>
         </div>
-        <div class="actions">
-          <div class="ui black deny button">
-            Nope
-          </div>
-          <div class="ui positive right labeled icon button">
-            Yep, that's me
-            <i class="checkmark icon"></i>
-          </div>
-        </div>
+
+
       </div>
     </div>
 </body>
