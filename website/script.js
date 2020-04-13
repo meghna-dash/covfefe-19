@@ -11,24 +11,49 @@ async function searchFunction(e) {
   var form = document.getElementById("loading")
   form.classList.add("loading")
   //make api requst
-  var res= await postData('https://covid-api.arjungandhi.com/', { query: inputVal })
-  data=JSON.parse(res.body)
+  var res = await postData('https://covid-api.arjungandhi.com/', {
+    query: inputVal
+  })
+  data = JSON.parse(res.body)
   console.log(data)
   //putting data in modal
-  
-  //
+  var medbar=document.getElementById("medical")
+  var value=Math.round(data.medical_credibility * 100).toString()
+  medbar.className= "c100 p".concat(value)
+  medbar.firstElementChild.innerHTML=value.concat("%")
+
+  var newsbar=document.getElementById("news")
+  var value=Math.round(data.news_hotness * 100).toString()
+  newsbar.className= "c100 green p".concat(value)
+  newsbar.firstElementChild.innerHTML=value.concat("%")
+
+  var toxbar=document.getElementById("toxicity")
+  var value=Math.round(data.toxicity * 100).toString()
+  toxbar.className= "c100 purple p".concat(value)
+  toxbar.firstElementChild.innerHTML=value.concat("%")
+
+  var negbar=document.getElementById("negative")
+  var value=Math.round(data.negitive_credibility * 100).toString()
+  negbar.className= "c100 red p".concat(value)
+  negbar.firstElementChild.innerHTML=value.concat("%")
+
+
+
+
+
+
+
   //pop modal up
-  $('.ui.tiny.modal')
-    .modal('show')
-  ;
+  $('.ui.small.modal')
+    .modal('show');
   //remove loading state
   form.classList.remove("loading")
 }
 
 
 function load() {
-const form = document.getElementById('covidsearch');
-form.addEventListener('submit', searchFunction);
+  const form = document.getElementById('covidsearch');
+  form.addEventListener('submit', searchFunction);
 }
 
 
