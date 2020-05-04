@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/circle.css">
+
+
+  <title>Covfefe-19</title>
+  <meta name="description" content="He does things .... Sometines.">
+  <meta name="author" content="Some Idiot.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type='text/javascript' src="./script.js"></script>
+
+</head>
+
+<body>
+
+  <div class="bg" id="content">
+    <div class="caption">
+      <p><span class="ui huge text">Covfefe-19</span></p>
+      <p><span class="ui big text">A quick service to fact check information you see about covid-19.</span></p>
+
+      <form id="covidsearch" class="ui big form ">
+        <div class="ui action input">
+          <input id="query" type="text" size="50" placeholder="Social Distancing is helpful...">
+          <input type="submit" style="display: none;" />
+          <button id="loading" class="ui icon button">
+            <i class="search icon"></i>
+          </button>
+        </div>
+      </form>
+
+      <div class="ui small modal">
+        <i class="close icon"></i>
+        <div class="header">
+          What We Found
+        </div>
+        <div class="content">
+          <div id="medical" class="c100">
+            <span>0%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+          <div id="news" class="c100 green">
+            <span>0%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+          <div id="toxicity" class="c100 purple">
+            <span>0%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+          <div id="negative" class="c100 red">
+            <span>0%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+        </div>
+        <div id="related_links" class="scrolling content">
+        </div>
+
+
+
+      </div>
+    </div>
+</body>
+
+</html>
